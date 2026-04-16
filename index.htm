@@ -2,470 +2,793 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faisal Khan Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <style>
-        /* --- 1. Global & Smooth Scroll --- */
-        html { scroll-behavior: smooth; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faisal Khan Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    /* --- 1. Global & Smooth Scroll --- */
+    html {
+      scroll-behavior: smooth;
+    }
 
-        body {
-            background: #000000;
-            margin: 0;
-            min-height: 100vh;
-            font-family: Lato, sans-serif;
-            color: white;
-            overflow-x: hidden;
-        }
+    body {
+      /* Matte Black / Charcoal base */
+      background-color: #121212;
+      margin: 0;
+      min-height: 100vh;
+      font-family: 'Lato', sans-serif;
+      color: #e0e0e0;
+      overflow-x: hidden;
+    }
 
-        [id] { scroll-margin-top: 80px; }
+    [id] {
+      scroll-margin-top: 80px;
+    }
 
-        /* --- 2. Navbar Styles --- */
-        .navbar {
-            background-color: #000 !important;
-            border: none;
-            padding: 10px 0;
-            z-index: 1000;
-        }
+    /* --- 2. Navbar Styles --- */
+    .navbar {
+      /* Graphite base with transparency */
+      background: rgba(28, 28, 28, 0.75) !important;
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+      padding: 12px 0;
+      z-index: 1000;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    }
 
-        .navbar .navbar-brand {
-            display: flex;
-            align-items: center;
-            border: 2px solid #dedcdc;
-            padding: 5px 15px;
-            border-radius: 8px;
-            color: #dedcdc !important;
-            transition: all 0.6s ease;
-        }
+    .navbar .navbar-brand {
+      display: flex;
+      align-items: center;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      background: rgba(255, 255, 255, 0.03);
+      padding: 8px 22px;
+      border-radius: 12px;
+      /* Squared off slightly for a modern look */
+      color: #ffd700 !important;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.4s;
+    }
 
-        .navbar .navbar-brand:hover {
-            color: #ffd700 !important;
-            border-color: #ffd700 !important;
-        }
+    .navbar .navbar-brand:hover {
+      background: rgba(255, 215, 0, 0.1);
+      border-color: #ffd700;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+    }
 
-        .navbar .nav>li>a {
-            color: #dedcdc !important;
-            transition: 0.6s;
-            border: 2px solid transparent;
-            border-radius: 8px;
-            margin: 0 5px;
-        }
+    /* UPDATED: Skills, Projects, Contact links now match Brand Style */
+    .navbar .nav>li>a {
+      color: #b0b0b0 !important;
+      margin: 5px 8px;
+      padding: 8px 22px !important;
+      border: 1px solid rgba(255, 215, 0, 0.1); 
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.4s ease;
+    }
 
-        .navbar .nav>li>a:hover {
-            color: #ffd700 !important;
-            border-color: #ffd700 !important;
-        }
+    .navbar .nav>li>a:hover {
+      background: rgba(255, 215, 0, 0.1) !important;
+      color: #ffd700 !important;
+      border-color: #ffd700 !important;
+      box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+      transform: translateY(-2px);
+    }
 
-        /* --- 3. Hero Section --- */
-        .main-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-around;
-            padding: 120px 5% 50px 5%;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
+    /* --- 3. Hero Section Enhancements --- */
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 180px 5% 100px 5%;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
 
-        .intro-section { flex: 1; min-width: 300px; }
-        h1 { font-size: 5vmin; color: #8bf; font-weight: 700; }
-        .intro-text { font-size: 4vmin; color: #8bf; font-weight: 700; margin-bottom: 15px; }
-        .description { font-family: cursive; font-size: 18px; color: white; }
+    /* --- 3. Hero Section --- */
+    .main-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 120px 5% 50px 5%;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        .button_slide {
-            padding: 1.1em 2.5em;
-            cursor: pointer;
-            color: white;
-            background-color: #8bf;
-            border: none;
-            border-radius: 10px;
-            transition: 0.4s;
-            text-decoration: none;
-            display: inline-block;
-            text-align: center;
-            font-weight: bold;
-        }
-        .slide_right:hover { color: #8bf; background: white; border: 2px solid orange; text-decoration: none; }
+    .intro-section {
+      flex: 1;
+      min-width: 300px;
+    }
 
-        /* --- 4. Image Section with Animations --- */
-        .img-section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            max-width: 400px;
-            flex: 1;
-        }
+    h1 {
+      font-size: 5vmin;
+      color: #8bf;
+      font-weight: 700;
+    }
 
-        .img-box {
-            padding: 20px;
-            border-radius: 15px;
-            background: #8bf;
-            position: relative;
-            box-shadow: 0 0 20px rgba(136, 187, 255, 0.4);
-        }
+    .intro-text {
+      font-size: 4vmin;
+      color: #8bf;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
 
-        .img-box img {
-            width: 250px;
-            height: 250px;
-            border-radius: 15px;
-            object-fit: cover;
-            display: block;
-        }
+    .description {
+      font-family: cursive;
+      font-size: 18px;
+      color: white;
+    }
 
-        /* Float Animations */
-        .animated-cube { position: absolute; top: -20px; right: -20px; animation: bounce 2.5s ease-out infinite; }
-        .cube { width: 40px; height: 40px; transform-style: preserve-3d; animation: rotate3D 5s linear infinite; }
-        .face { position: absolute; width: 40px; height: 40px; background: gold; border: 1px solid #0d96b9; }
-        .face.front  { transform: translateZ(20px); }
-        .face.back   { transform: rotateY(180deg) translateZ(20px); }
-        .face.right  { transform: rotateY(90deg) translateZ(20px); }
-        .face.left   { transform: rotateY(-90deg) translateZ(20px); }
-        .face.top    { transform: rotateX(90deg) translateZ(20px); }
-        .face.bottom { transform: rotateX(-90deg) translateZ(20px); }
+    .button_slide {
+      padding: 1.1em 2.5em;
+      cursor: pointer;
+      color: white;
+      background-color: #8bf;
+      border: none;
+      border-radius: 10px;
+      transition: 0.4s;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+      font-weight: bold;
+    }
 
-        @keyframes rotate3D { from { transform: rotateX(0deg) rotateY(0deg); } to { transform: rotateX(360deg) rotateY(360deg); } }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+    .slide_right:hover {
+      color: #8bf;
+      background: white;
+      border: 2px solid orange;
+      text-decoration: none;
+    }
 
-        .animated-zigzag-wrapper { position: absolute; top: -15px; left: -15px; animation: zigzagMove 3s ease-in-out infinite; }
-        @keyframes zigzagMove { 0%, 100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1) translateX(5px); opacity: 0.8; } }
+    /* --- 4. Image Section with Animations --- */
+    .img-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      max-width: 400px;
+      flex: 1;
+    }
 
-        .bouncing-circle { position: absolute; bottom: -10px; left: -10px; width: 20px; height: 20px; background: #ffd700; border-radius: 50%; border: 2px solid white; animation: bounceCircle 2s ease-in-out infinite; }
-        @keyframes bounceCircle { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
+    .img-box {
+      padding: 20px;
+      border-radius: 15px;
+      background: #8bf;
+      position: relative;
+      box-shadow: 0 0 20px rgba(136, 187, 255, 0.4);
+    }
 
-        .dots-grid-wrapper { position: absolute; bottom: -15px; right: -15px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
-        .dot { width: 6px; height: 6px; background: #ffd700; border-radius: 50%; animation: pulseDot 1.5s ease-in-out infinite; }
-        @keyframes pulseDot { 0%, 100% { transform: scale(0.7); opacity: 0.5; } 50% { transform: scale(1); opacity: 1; } }
+    .img-box img {
+      width: 250px;
+      height: 250px;
+      border-radius: 15px;
+      object-fit: cover;
+      display: block;
+    }
 
-        /* --- 5. Toggleable Skills Section --- */
-        #skillsSection {
-            display: none; 
-            padding: 60px 5%;
-            background: #0a0a0a;
-            border-top: 1px solid #333;
-            border-bottom: 1px solid #333;
-            position: relative;
-        }
+    /* Float Animations */
+    .animated-cube {
+      position: absolute;
+      top: -20px;
+      right: -20px;
+      animation: bounce 2.5s ease-out infinite;
+    }
 
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 20px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+    .cube {
+      width: 40px;
+      height: 40px;
+      transform-style: preserve-3d;
+      animation: rotate3D 5s linear infinite;
+    }
 
-        .skill-card {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: 0.4s;
-        }
-        .skill-card:hover { border-color: #ffd700; transform: translateY(-5px); }
-        .skill-card i { font-size: 40px; margin-bottom: 10px; display: block; }
+    .face {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: gold;
+      border: 1px solid #0d96b9;
+    }
 
-        .close-skills { position: absolute; top: 20px; right: 40px; font-size: 30px; color: #ffd700; cursor: pointer; }
+    .face.front {
+      transform: translateZ(20px);
+    }
 
-        /* --- 6. Projects Section --- */
-        .section-padding { padding: 80px 5%; }
-        .projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        .project-card {
-            background: #111;
-            border: 1px solid #333;
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            transition: 0.5s;
-        }
-        .project-card:hover { border-color: #ffd700; transform: translateY(-10px); }
-        .project-card i { font-size: 45px; color: #8bf; margin-bottom: 15px; }
+    .face.back {
+      transform: rotateY(180deg) translateZ(20px);
+    }
 
-        /* --- 7. NEW STYLISH CONTACT MODAL --- */
-        .contact-modal {
-            display: none; 
-            position: fixed;
-            z-index: 9999;
-            left: 0; top: 0; width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(10px); /* Blur background */
-        }
+    .face.right {
+      transform: rotateY(90deg) translateZ(20px);
+    }
 
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05); /* Glass effect */
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 25px;
-            padding: 40px;
-            width: 90%;
-            max-width: 450px;
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(136, 187, 255, 0.2);
-        }
+    .face.left {
+      transform: rotateY(-90deg) translateZ(20px);
+    }
 
-        .contact-header i {
-            font-size: 60px;
-            color: #ffd700;
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
-            margin-bottom: 15px;
-        }
+    .face.top {
+      transform: rotateX(90deg) translateZ(20px);
+    }
 
-        .contact-card h3 {
-            font-size: 28px;
-            font-weight: bold;
-            color: white;
-            margin-bottom: 30px;
-            letter-spacing: 1px;
-        }
+    .face.bottom {
+      transform: rotateX(-90deg) translateZ(20px);
+    }
 
-        .contact-info {
-            text-align: left;
-            margin-bottom: 30px;
-        }
+    @keyframes rotate3D {
+      from {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: 0.3s;
-        }
+      to {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
 
-        .contact-item:hover {
-            background: rgba(136, 187, 255, 0.1);
-            border-color: #8bf;
-            transform: scale(1.02);
-        }
+    @keyframes bounce {
 
-        .contact-item i {
-            font-size: 20px;
-            color: #8bf;
-            margin-right: 15px;
-            width: 25px;
-            text-align: center;
-        }
+      0%,
+      100% {
+        transform: translateY(0);
+      }
 
-        .contact-item span, .contact-item a {
-            color: #dedcdc;
-            font-size: 16px;
-            text-decoration: none;
-        }
+      50% {
+        transform: translateY(-30px);
+      }
+    }
 
-        .contact-item a:hover { color: #ffd700; }
+    .animated-zigzag-wrapper {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      animation: zigzagMove 3s ease-in-out infinite;
+    }
 
-        .modal-footer-btns {
-            display: flex;
-            gap: 10px;
-            flex-direction: column;
-        }
+    @keyframes zigzagMove {
 
-        .close-modal-x {
-            position: absolute;
-            top: 15px; right: 20px;
-            font-size: 25px;
-            color: #888;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .close-modal-x:hover { color: #ffd700; }
+      0%,
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
 
-        /* Typewriter Animation */
-        @keyframes typing {
-            0%, 27% { content: ""; }
-            1%, 26% { content: "D"; }
-            2%, 25% { content: "De"; }
-            3%, 24% { content: "Dev"; }
-            4%, 23% { content: "Deve"; }
-            5%, 22% { content: "Devel"; }
-            6%, 21% { content: "Develo"; }
-            7%, 20% { content: "Develop"; }
-            8%, 19% { content: "Develope"; }
-            9%, 18% { content: "Developer"; }
-            30%, 51% { content: ""; }
-            55%, 74% { content: "C"; }
-            57%, 72% { content: "Co"; }
-            59%, 70% { content: "Cod"; }
-            61%, 68% { content: "Code"; }
-            63%, 66% { content: "Coder"; }
-        }
-        .typewriter::before { content: ""; animation: typing 13.5s infinite; }
-    </style>
+      50% {
+        transform: scale(1.1) translateX(5px);
+        opacity: 0.8;
+      }
+    }
+
+    .bouncing-circle {
+      position: absolute;
+      bottom: -10px;
+      left: -10px;
+      width: 20px;
+      height: 20px;
+      background: #ffd700;
+      border-radius: 50%;
+      border: 2px solid white;
+      animation: bounceCircle 2s ease-in-out infinite;
+    }
+
+    @keyframes bounceCircle {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    .dots-grid-wrapper {
+      position: absolute;
+      bottom: -15px;
+      right: -15px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .dot {
+      width: 6px;
+      height: 6px;
+      background: #ffd700;
+      border-radius: 50%;
+      animation: pulseDot 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseDot {
+
+      0%,
+      100% {
+        transform: scale(0.7);
+        opacity: 0.5;
+      }
+
+      50% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* --- 5. Toggleable Skills Section --- */
+    #skillsSection {
+      display: none;
+      padding: 60px 5%;
+      background: #0a0a0a;
+      border-top: 1px solid #333;
+      border-bottom: 1px solid #333;
+      position: relative;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 20px;
+      text-align: center;
+      transition: 0.4s;
+    }
+
+    .skill-card:hover {
+      border-color: #ffd700;
+      transform: translateY(-5px);
+    }
+
+    .skill-card i {
+      font-size: 40px;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .close-skills {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 30px;
+      color: #ffd700;
+      cursor: pointer;
+    }
+
+    /* --- 6. Projects Section --- */
+    .section-padding {
+      padding: 80px 5%;
+    }
+
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .project-card {
+      background: #111;
+      border: 1px solid #333;
+      border-radius: 15px;
+      padding: 30px;
+      text-align: center;
+      transition: 0.5s;
+    }
+
+    .project-card:hover {
+      border-color: #ffd700;
+      transform: translateY(-10px);
+    }
+
+    .project-card i {
+      font-size: 45px;
+      color: #8bf;
+      margin-bottom: 15px;
+    }
+
+    /* --- 7. NEW STYLISH CONTACT MODAL --- */
+    .contact-modal {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      /* Blur background */
+    }
+
+    .contact-card {
+      background: rgba(255, 255, 255, 0.05);
+      /* Glass effect */
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 40px;
+      width: 90%;
+      max-width: 450px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), 0 0 20px rgba(136, 187, 255, 0.2);
+    }
+
+    .contact-header i {
+      font-size: 60px;
+      color: #ffd700;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+      margin-bottom: 15px;
+    }
+
+    .contact-card h3 {
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+    }
+
+    .contact-info {
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      transition: 0.3s;
+    }
+
+    .contact-item:hover {
+      background: rgba(136, 187, 255, 0.1);
+      border-color: #8bf;
+      transform: scale(1.02);
+    }
+
+    .contact-item i {
+      font-size: 20px;
+      color: #8bf;
+      margin-right: 15px;
+      width: 25px;
+      text-align: center;
+    }
+
+    .contact-item span,
+    .contact-item a {
+      color: #dedcdc;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .contact-item a:hover {
+      color: #ffd700;
+    }
+
+    .modal-footer-btns {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+    }
+
+    .close-modal-x {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 25px;
+      color: #888;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .close-modal-x:hover {
+      color: #ffd700;
+    }
+
+    /* Typewriter Animation */
+    @keyframes typing {
+
+      0%,
+      27% {
+        content: "";
+      }
+
+      1%,
+      26% {
+        content: "D";
+      }
+
+      2%,
+      25% {
+        content: "De";
+      }
+
+      3%,
+      24% {
+        content: "Dev";
+      }
+
+      4%,
+      23% {
+        content: "Deve";
+      }
+
+      5%,
+      22% {
+        content: "Devel";
+      }
+
+      6%,
+      21% {
+        content: "Develo";
+      }
+
+      7%,
+      20% {
+        content: "Develop";
+      }
+
+      8%,
+      19% {
+        content: "Develope";
+      }
+
+      9%,
+      18% {
+        content: "Developer";
+      }
+
+      30%,
+      51% {
+        content: "";
+      }
+
+      55%,
+      74% {
+        content: "C";
+      }
+
+      57%,
+      72% {
+        content: "Co";
+      }
+
+      59%,
+      70% {
+        content: "Cod";
+      }
+
+      61%,
+      68% {
+        content: "Code";
+      }
+
+      63%,
+      66% {
+        content: "Coder";
+      }
+    }
+
+    .typewriter::before {
+      content: "";
+      animation: typing 13.5s infinite;
+    }
+  </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Faisal Khan</a>
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="javascript:void(0)" id="skillsToggle">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="javascript:void(0)" id="contactBtn">Contact me</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="main-content">
-        <div class="intro-section">
-            <h1>Hi! I'm Faisal Khan</h1>
-            <div class="intro-text">and I'm a <span class="typewriter"></span></div>
-            <p class="description">Frontend Developer. Transitioning from Petroleum Engineering to crafting high-performance digital experiences.</p>
-            <button class="button_slide slide_right"><span>Hire Me</span></button>
-        </div>
-        <div class="img-section">
-            <div class="img-box">
-                <img src="https://www.dl.dropboxusercontent.com/scl/fi/2o25jb5dkcpujsn9ycfi9/My-pic.jpeg?rlkey=v1imnkmhu7tau0gjowsnwqsjz" alt="Faisal Khan">
-                <div class="animated-zigzag-wrapper">
-                    <svg width="40" height="120" viewBox="0 0 50 200" preserveAspectRatio="none">
-                        <polyline points="25,0 0,25 25,50 0,75 25,100 0,125 25,150 0,175 25,200" fill="none" stroke="#ffd700" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </div>
-                <div class="animated-cube">
-                    <div class="cube">
-                        <div class="face front"></div><div class="face back"></div>
-                        <div class="face right"></div><div class="face left"></div>
-                        <div class="face top"></div><div class="face bottom"></div>
-                    </div>
-                </div>
-                <div class="bouncing-circle"></div>
-                <div class="dots-grid-wrapper">
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                    <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-                </div>
-            </div>
-        </div>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Faisal Khan</a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="javascript:void(0)" id="skillsToggle">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="javascript:void(0)" id="contactBtn">Contact me</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <div id="skillsSection">
-        <span class="close-skills" id="closeSkills">&times;</span>
-        <h2 style="color: #ffd700; text-align: center; margin-bottom: 40px; font-weight: bold;">Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-card"><i class="fa-brands fa-html5" style="color: #e34c26;"></i><h3>HTML</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i><h3>CSS</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-js" style="color: #f7df1e;"></i><h3>JavaScript</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i><h3>Bootstrap</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-react" style="color: #61dbfb;"></i><h3>React</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-file-code" style="color: #3178c6;"></i><h3>TypeScript</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-code" style="color: #0868ac;"></i><h3>jQuery</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-rotate" style="color: #8bf;"></i><h3>Ajax</h3></div>
-        </div>
+  <div class="main-content">
+    <div class="intro-section">
+      <h1>Hi! I'm Faisal Khan</h1>
+      <div class="intro-text">and I'm a <span class="typewriter"></span></div>
+      <p class="description">Frontend Developer. Transitioning from Petroleum Engineering to crafting high-performance
+        digital experiences.</p>
+      <button class="button_slide slide_right"><span>Hire Me</span></button>
     </div>
-
-    <div class="section-padding" id="projects">
-        <h2 style="color: #8bf; text-align: center; font-size: 35px; margin-bottom: 40px; font-weight: bold;">Featured Projects</h2>
-        <div class="projects-container">
-            <div class="project-card">
-                <i class="fa-solid fa-chart-column"></i>
-                <h3>Offer Portal Bar</h3>
-                <p>Interactive dashboard for Opportunity Analysis and reporting.</p>
-                <a href="https://faisal10012001.github.io/Bar/" class="button_slide slide_right" target="_blank">View Project</a>
-            </div>
-            <div class="project-card">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Matrimonial Site</h3>
-                <p>Matrimonial matchmaking platform with dynamic filtering.</p>
-                <a href="https://faisal10012001.github.io/Matrimonial/" target="_blank" class="button_slide slide_right">View Project</a>
-            </div>
-            <div class="project-card">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <h3>Shopping Cart</h3>
-                <p>E-commerce React module with product management.</p>
-                <a href="https://faisal10012001.github.io/Shopping-Cart/" target="_blank" class="button_slide slide_right">View Project</a>
-            </div>
-            <div class="project-card">
-                <i class="fa-solid fa-building-columns"></i>
-                <h3>EMI Calculator</h3>
-                <p>High-accuracy financial tool for quick loan interest calculations.</p>
-                <a href="https://emi-calculator-rouge-xi.vercel.app/" target="_blank" class="button_slide slide_right">View Project</a>
-            </div>
-            <div class="project-card">
-                <i class="fa-solid fa-cloud-sun"></i>
-                <h3>Weather App</h3>
-                <p>Live weather updates fetching data from external APIs.</p>
-                <a href="https://weather-app-two-lake-51.vercel.app/" class="button_slide slide_right" target="_blank">View Project</a>
-            </div>
+    <div class="img-section">
+      <div class="img-box">
+        <img
+          src="https://www.dl.dropboxusercontent.com/scl/fi/2o25jb5dkcpujsn9ycfi9/My-pic.jpeg?rlkey=v1imnkmhu7tau0gjowsnwqsjz"
+          alt="Faisal Khan">
+        <div class="animated-zigzag-wrapper">
+          <svg width="40" height="120" viewBox="0 0 50 200" preserveAspectRatio="none">
+            <polyline points="25,0 0,25 25,50 0,75 25,100 0,125 25,150 0,175 25,200" fill="none" stroke="#ffd700"
+              stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
         </div>
-    </div>
-
-    <div id="contactModal" class="contact-modal">
-        <div class="contact-card">
-            <span class="close-modal-x" id="closeContactX">&times;</span>
-            <div class="contact-header">
-                <i class="fa-solid fa-paper-plane"></i>
-            </div>
-            <h3>Get In Touch</h3>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>faisal.20pe149@gmail.com</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>+91 7976268339</span>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-brands fa-linkedin"></i>
-                    <a href="https://www.linkedin.com/in/faisal-khan-335165207/" target="_blank">linkedin.com/in/faisal-khan</a>
-                </div>
-            </div>
-
-            <div class="modal-footer-btns">
-                <a href="https://drive.google.com/uc?export=download&id=14JjJt6j_1WqyHWWpy5XHXoiR1VBz2beQ" target="_blank" class="button_slide slide_right">
-                    <i class="fa-solid fa-download"></i> Download CV
-                </a>
-            </div>
+        <div class="animated-cube">
+          <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+          </div>
         </div>
+        <div class="bouncing-circle"></div>
+        <div class="dots-grid-wrapper">
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+          <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            // Skills Toggle
-            $('#skillsToggle').on('click', function() {
-                $('#skillsSection').slideToggle(500, function() {
-                    if($(this).is(':visible')) {
-                        $('html, body').animate({ scrollTop: $("#skillsSection").offset().top - 80 }, 800);
-                    }
-                });
-            });
+  <div id="skillsSection">
+    <span class="close-skills" id="closeSkills">&times;</span>
+    <h2 style="color: #ffd700; text-align: center; margin-bottom: 40px; font-weight: bold;">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><i class="fa-brands fa-html5" style="color: #e34c26;"></i>
+        <h3>HTML</h3>
+      </div>
+      <div class="skill-card"><i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
+        <h3>CSS</h3>
+      </div>
+      <div class="skill-card"><i class="fa-brands fa-js" style="color: #f7df1e;"></i>
+        <h3>JavaScript</h3>
+      </div>
+      <div class="skill-card"><i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i>
+        <h3>Bootstrap</h3>
+      </div>
+      <div class="skill-card"><i class="fa-brands fa-react" style="color: #61dbfb;"></i>
+        <h3>React</h3>
+      </div>
+      <div class="skill-card"><i class="fa-solid fa-file-code" style="color: #3178c6;"></i>
+        <h3>TypeScript</h3>
+      </div>
+      <div class="skill-card"><i class="fa-solid fa-code" style="color: #0868ac;"></i>
+        <h3>jQuery</h3>
+      </div>
+      <div class="skill-card"><i class="fa-solid fa-rotate" style="color: #8bf;"></i>
+        <h3>Ajax</h3>
+      </div>
+    </div>
+  </div>
 
-            $('#closeSkills').on('click', function() { $('#skillsSection').slideUp(400); });
+  <div class="section-padding" id="projects">
+    <h2 style="color: #8bf; text-align: center; font-size: 35px; margin-bottom: 40px; font-weight: bold;">Featured
+      Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <i class="fa-solid fa-chart-column"></i>
+        <h3>Offer Portal Bar</h3>
+        <p>Interactive dashboard for Opportunity Analysis and reporting.</p>
+        <a href="https://faisal10012001.github.io/Bar/" class="button_slide slide_right" target="_blank">View
+          Project</a>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-heart"></i>
+        <h3>Matrimonial Site</h3>
+        <p>Matrimonial matchmaking platform with dynamic filtering.</p>
+        <a href="https://faisal10012001.github.io/Matrimonial/" target="_blank" class="button_slide slide_right">View
+          Project</a>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <h3>Shopping Cart</h3>
+        <p>E-commerce React module with product management.</p>
+        <a href="https://faisal10012001.github.io/Shopping-Cart/" target="_blank" class="button_slide slide_right">View
+          Project</a>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-building-columns"></i>
+        <h3>EMI Calculator</h3>
+        <p>High-accuracy financial tool for quick loan interest calculations.</p>
+        <a href="https://emi-calculator-rouge-xi.vercel.app/" target="_blank" class="button_slide slide_right">View
+          Project</a>
+      </div>
+      <div class="project-card">
+        <i class="fa-solid fa-cloud-sun"></i>
+        <h3>Weather App</h3>
+        <p>Live weather updates fetching data from external APIs.</p>
+        <a href="https://weather-app-two-lake-51.vercel.app/" class="button_slide slide_right" target="_blank">View
+          Project</a>
+      </div>
+    </div>
+  </div>
 
-            // Contact Modal
-            $('#contactBtn').on('click', function() { $('#contactModal').fadeIn(300); });
-            $('#closeContactX, .contact-modal').on('click', function(e) {
-                if(e.target !== this && e.target.id !== 'closeContactX') return;
-                $('#contactModal').fadeOut(300);
-            });
+  <div id="contactModal" class="contact-modal">
+    <div class="contact-card">
+      <span class="close-modal-x" id="closeContactX">&times;</span>
+      <div class="contact-header">
+        <i class="fa-solid fa-paper-plane"></i>
+      </div>
+      <h3>Get In Touch</h3>
 
-            // Smooth Scroll
-            $(".nav a").on('click', function(event) {
-                if (this.hash !== "" && this.id !== "skillsToggle") {
-                    event.preventDefault();
-                    var hash = this.hash;
-                    $('html, body').animate({ scrollTop: $(hash).offset().top - 80 }, 800);
-                }
-            });
+      <div class="contact-info">
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <span>faisal.20pe149@gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <span>+91 7976268339</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/faisal-khan-335165207/" target="_blank">linkedin.com/in/faisal-khan</a>
+        </div>
+      </div>
+
+      <div class="modal-footer-btns">
+        <a href="https://drive.google.com/uc?export=download&id=14JjJt6j_1WqyHWWpy5XHXoiR1VBz2beQ" target="_blank"
+          class="button_slide slide_right">
+          <i class="fa-solid fa-download"></i> Download CV
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      // Skills Toggle
+      $('#skillsToggle').on('click', function () {
+        $('#skillsSection').slideToggle(500, function () {
+          if ($(this).is(':visible')) {
+            $('html, body').animate({ scrollTop: $("#skillsSection").offset().top - 80 }, 800);
+          }
         });
-    </script>
+      });
+
+      $('#closeSkills').on('click', function () { $('#skillsSection').slideUp(400); });
+
+      // Contact Modal
+      $('#contactBtn').on('click', function () { $('#contactModal').fadeIn(300); });
+      $('#closeContactX, .contact-modal').on('click', function (e) {
+        if (e.target !== this && e.target.id !== 'closeContactX') return;
+        $('#contactModal').fadeOut(300);
+      });
+
+      // Smooth Scroll
+      $(".nav a").on('click', function (event) {
+        if (this.hash !== "" && this.id !== "skillsToggle") {
+          event.preventDefault();
+          var hash = this.hash;
+          $('html, body').animate({ scrollTop: $(hash).offset().top - 80 }, 800);
+        }
+      });
+    });
+  </script>
 </body>
+
 </html>
