@@ -7,25 +7,101 @@
    <title>Faisal Khan Portfolio</title>
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
    <style>
-      html { scroll-behavior: smooth; }
-      body { background: #000; margin: 0; min-height: 100vh; font-family: Lato, sans-serif; color: white; }
-      [id] { scroll-margin-top: 80px; }
+      /* --- 1. Global & Smooth Scroll --- */
+      html {
+         scroll-behavior: smooth;
+      }
 
-      .navbar { background-color: #000 !important; border: none; padding: 10px 0; }
-      .navbar .navbar-brand { display: flex; align-items: center; border: 2px solid #dedcdc; padding: 5px 15px; border-radius: 8px; color: #dedcdc !important; transition: all 0.6s ease; margin-top: 5px; }
-      .navbar .navbar-brand:hover { color: #ffd700 !important; border-color: #ffd700 !important; }
-      .navbar .nav>li>a { color: #dedcdc !important; transition: 0.6s; border: 2px solid transparent; border-radius: 8px; margin: 0 5px; }
-      .navbar .nav>li>a:hover { color: #ffd700 !important; border-color: #ffd700 !important; }
-      .navbar-logo { height: 25px; margin-right: 10px; }
+      body {
+         background: #000000;
+         margin: 0;
+         min-height: 100vh;
+         font-family: Lato, sans-serif;
+         color: white;
+      }
 
-      .main-content { display: flex; align-items: center; justify-content: space-around; padding: 50px 5%; flex-wrap: wrap; gap: 20px; }
-      .intro-section { flex: 1; min-width: 300px; }
-      h1 { font-size: 5vmin; color: #8bf; font-weight: 700; }
-      .intro-text { font-size: 4vmin; color: #8bf; font-weight: 700; margin-bottom: 15px; }
-      .description { font-family: cursive; font-size: 18px; max-width: 500px; color: white; }
+      [id] {
+         scroll-margin-top: 80px;
+      }
 
+      /* --- 2. Navbar Styles --- */
+      .navbar {
+         background-color: #000 !important;
+         border: none;
+         padding: 10px 0;
+      }
+
+      .navbar .navbar-brand {
+         display: flex;
+         align-items: center;
+         border: 2px solid #dedcdc;
+         padding: 5px 15px;
+         border-radius: 8px;
+         color: #dedcdc !important;
+         transition: all 0.6s ease;
+         margin-top: 5px;
+      }
+
+      .navbar .navbar-brand:hover {
+         color: #ffd700 !important;
+         border-color: #ffd700 !important;
+      }
+
+      .navbar .nav>li>a {
+         color: #dedcdc !important;
+         transition: 0.6s;
+         border: 2px solid transparent;
+         border-radius: 8px;
+         margin: 0 5px;
+      }
+
+      .navbar .nav>li>a:hover {
+         color: #ffd700 !important;
+         border-color: #ffd700 !important;
+      }
+
+      .navbar-logo {
+         height: 25px;
+         margin-right: 10px;
+      }
+
+      /* --- 3. Hero Section --- */
+      .main-content {
+         display: flex;
+         align-items: center;
+         justify-content: space-around;
+         padding: 50px 5%;
+         flex-wrap: wrap;
+         gap: 20px;
+      }
+
+      .intro-section {
+         flex: 1;
+         min-width: 300px;
+      }
+
+      h1 {
+         font-size: 5vmin;
+         color: #8bf;
+         font-weight: 700;
+      }
+
+      .intro-text {
+         font-size: 4vmin;
+         color: #8bf;
+         font-weight: 700;
+         margin-bottom: 15px;
+      }
+
+      .description {
+         font-family: cursive;
+         font-size: 18px;
+         max-width: 500px;
+         color: white;
+      }
+
+      /* Typewriter Animation */
       @keyframes typing {
          0%, 27% { content: ""; }
          1%, 26% { content: "D"; }
@@ -45,87 +121,282 @@
          63%, 66% { content: "Coder"; }
       }
 
-      .typewriter::before { content: ""; animation: typing 13.5s infinite; }
+      .typewriter::before {
+         content: "";
+         animation: typing 13.5s infinite;
+      }
 
-      .button_slide { padding: 1.1em 2.5em; font-family: monospace; cursor: pointer; color: white; background-color: #8bf; border: none; border-radius: 10px; position: relative; overflow: hidden; transition: color 0.4s ease; }
-      .slide_right:hover { color: #8bf; background: white; border: 2px solid orange; }
+      /* Hire Me Button Slide Effect */
+      .button_slide {
+         padding: 1.1em 2.5em;
+         font-family: "Lucida Console", Monaco, monospace;
+         cursor: pointer;
+         color: white;
+         background-color: #8bf;
+         border: none;
+         border-radius: 10px;
+         position: relative;
+         overflow: hidden;
+         transition: color 0.4s ease;
+      }
 
-      .img-section { display: flex; justify-content: center; align-items: center; position: relative; max-width: 400px; flex: 1; }
-      .img-box { padding: 20px; border-radius: 15px; background: #8bf; position: relative; box-shadow: 0 0 20px rgba(136,187,255,0.4); }
-      .img-box img { width: 250px; height: 250px; border-radius: 15px; object-fit: cover; display: block; }
+      .slide_right:hover {
+         color: #8bf;
+         background: white;
+         border: 2px solid orange;
+      }
 
-      .projects-section { padding: 80px 5%; }
-      .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
-      .project-card { background: #111; border: 1px solid #333; border-radius: 15px; padding: 30px; text-align: center; transition: 0.5s; }
-      .project-card:hover { border-color: #ffd700; transform: translateY(-10px); }
+      /* --- 4. Image & Decorative Animations --- */
+      .img-section {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         position: relative;
+         max-width: 400px;
+         flex: 1;
+      }
+
+      .img-box {
+         padding: 20px;
+         border-radius: 15px;
+         background: #8bf;
+         position: relative;
+         box-shadow: 0 0 20px rgba(136, 187, 255, 0.4);
+      }
+
+      .img-box img {
+         width: 250px;
+         height: 250px;
+         border-radius: 15px;
+         object-fit: cover;
+         display: block;
+      }
+
+      /* 3D Cube (Top Right) */
+      .animated-cube {
+         position: absolute;
+         top: -20px;
+         right: -20px;
+         animation: bounce 2.5s ease-out infinite;
+      }
+      .cube {
+         width: 40px; height: 40px;
+         transform-style: preserve-3d;
+         animation: rotate3D 5s linear infinite;
+      }
+      .face {
+         position: absolute; width: 40px; height: 40px;
+         background: gold; border: 1px solid #0d96b9;
+      }
+      .face.front  { transform: translateZ(20px); }
+      .face.back   { transform: rotateY(180deg) translateZ(20px); }
+      .face.right  { transform: rotateY(90deg) translateZ(20px); }
+      .face.left   { transform: rotateY(-90deg) translateZ(20px); }
+      .face.top    { transform: rotateX(90deg) translateZ(20px); }
+      .face.bottom { transform: rotateX(-90deg) translateZ(20px); }
+
+      @keyframes rotate3D {
+         from { transform: rotateX(0deg) rotateY(0deg); }
+         to { transform: rotateX(360deg) rotateY(360deg); }
+      }
+
+      @keyframes bounce {
+         0%, 100% { transform: translateY(0); }
+         50% { transform: translateY(-30px); }
+      }
+
+      /* Zigzag (Top Left) */
+      .animated-zigzag-wrapper {
+         position: absolute;
+         top: -15px; left: -15px;
+         animation: zigzagMove 3s ease-in-out infinite;
+      }
+      @keyframes zigzagMove {
+         0%, 100% { transform: scale(1); opacity: 1; }
+         50% { transform: scale(1.1) translateX(5px); opacity: 0.8; }
+      }
+
+      /* Bouncing Circle (Bottom Left) */
+      .bouncing-circle {
+         position: absolute;
+         bottom: -10px; left: -10px;
+         width: 20px; height: 20px;
+         background: #ffd700;
+         border-radius: 50%;
+         border: 2px solid white;
+         animation: bounceCircle 2s ease-in-out infinite;
+      }
+      @keyframes bounceCircle {
+         0%, 100% { transform: translateY(0); }
+         50% { transform: translateY(-15px); }
+      }
+
+      /* Dots Grid (Bottom Right) */
+      .dots-grid-wrapper {
+         position: absolute;
+         bottom: -15px; right: -15px;
+         display: grid;
+         grid-template-columns: repeat(3, 1fr);
+         gap: 6px;
+      }
+      .dot {
+         width: 6px; height: 6px;
+         background: #ffd700;
+         border-radius: 50%;
+         animation: pulseDot 1.5s ease-in-out infinite;
+      }
+      @keyframes pulseDot {
+         0%, 100% { transform: scale(0.7); opacity: 0.5; }
+         50% { transform: scale(1); opacity: 1; }
+      }
+
+      /* --- 5. Projects Section --- */
+      .projects-section {
+         padding: 80px 5%;
+      }
+      .projects-container {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+         gap: 30px;
+         margin-top: 40px;
+      }
+      .project-card {
+         background: #111;
+         border: 1px solid #333;
+         border-radius: 15px;
+         padding: 30px;
+         text-align: center;
+         transition: 0.5s;
+      }
+      .project-card:hover {
+         border-color: #ffd700;
+         transform: translateY(-10px);
+      }
       .project-card i { font-size: 45px; color: #8bf; margin-bottom: 15px; }
       .project-card h3 { color: #ffd700; margin-bottom: 15px; }
       .project-card p { color: white; margin-bottom: 20px; }
-      .btn-project { margin-top: 15px; display: inline-block; padding: 8px 25px; border: 1px solid #8bf; color: #8bf; text-decoration: none; border-radius: 5px; }
+      .btn-project {
+         margin-top: 15px;
+         display: inline-block;
+         padding: 8px 25px;
+         border: 1px solid #8bf;
+         color: #8bf;
+         text-decoration: none;
+         border-radius: 5px;
+      }
       .btn-project:hover { background: #8bf; color: #000; text-decoration: none; }
+
    </style>
 </head>
 
 <body>
-
-<nav class="navbar navbar-default navbar-static-top">
-   <div class="container">
-      <div class="navbar-header">
-         <a class="navbar-brand" href="#">Faisal Khan</a>
+   <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+         <div class="navbar-header">
+            <a class="navbar-brand" href="#">
+               <img class="navbar-logo" src='data:image/svg+xml;charset=UTF-8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" rx="15" fill="%238bf"/><text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Arial" font-size="60" fill="black" font-weight="bold">FK</text></svg>' alt="Logo">
+               Faisal Khan
+            </a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+               <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+            </button>
+         </div>
+         <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="#projects">Projects</a></li>
+               <li><a href="#skills">Skills</a></li>
+               <li><a href="#contact">Contact me</a></li>
+            </ul>
+         </div>
       </div>
-      <div class="collapse navbar-collapse">
-         <ul class="nav navbar-nav navbar-right">
-            <li><a href="#projects">Projects</a></li>
-         </ul>
+   </nav>
+
+   <div class="main-content">
+      <div class="intro-section">
+         <h1>Hi! I'm Faisal Khan</h1>
+         <div class="intro-text">and I'm a <span class="typewriter"></span></div>
+         <p class="description">I'm a Full Stack Developer with expertise in creating dynamic and responsive web applications.</p>
+         <button class="button_slide slide_right"><span>Hire Me</span></button>
+      </div>
+
+      <div class="img-section">
+         <div class="img-box">
+            <img src="https://www.dl.dropboxusercontent.com/scl/fi/2o25jb5dkcpujsn9ycfi9/My-pic.jpeg?rlkey=v1imnkmhu7tau0gjowsnwqsjz" alt="Faisal Khan">
+
+            <div class="animated-zigzag-wrapper">
+               <svg width="40" height="120" viewBox="0 0 50 200" preserveAspectRatio="none">
+                  <polyline points="25,0 0,25 25,50 0,75 25,100 0,125 25,150 0,175 25,200" fill="none" stroke="#ffd700" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+               </svg>
+            </div>
+
+            <div class="animated-cube">
+               <div class="cube">
+                  <div class="face front"></div><div class="face back"></div>
+                  <div class="face right"></div><div class="face left"></div>
+                  <div class="face top"></div><div class="face bottom"></div>
+               </div>
+            </div>
+
+            <div class="bouncing-circle"></div>
+
+            <div class="dots-grid-wrapper">
+               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+               <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            </div>
+         </div>
       </div>
    </div>
-</nav>
 
-<div class="main-content">
-   <div class="intro-section">
-      <h1>Hi! I'm Faisal Khan</h1>
-      <div class="intro-text">and I'm a <span class="typewriter"></span></div>
-      <p class="description">Full Stack Developer</p>
-   </div>
+   <div class="projects-section" id="projects">
+      <h2 style="color: #8bf; text-align: center; font-weight: bold; font-size: 35px;">Featured Projects</h2>
+      <div class="projects-container">
+
+         <div class="project-card" id="project1">
+            <i class="fa-solid fa-book"></i>
+            <h3>Dictionary App</h3>
+            <p>A dynamic dictionary app that fetches word meanings and synonyms in real-time.</p>
+            <a href="dictionary.html" class="btn-project">View Project</a>
+         </div>
+
+         <div class="project-card" id="project2">
+            <i class="fa-solid fa-heart"></i>
+            <h3>Matrimonial Site</h3>
+            <p>A full-stack platform for finding life partners with advanced filtering options.</p>
+        <a href="https://faisal10012001.github.io/Matrimonial/" class="btn-project" target="_blank">View Project</a>
+         </div>
+
+         <div class="project-card" id="project3">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h3>Shopping Cart</h3>
+            <p>An e-commerce module featuring product management and secure checkout.</p>
+            <a href="https://faisal10012001.github.io/Shopping-Cart/" class="btn-project" target="_blank">View Project</a>
+         </div>
+
+         <div class="project-card" id="project4">
+            <i class="fa-solid fa-beer-mug-empty"></i>
+            <h3>Bar Site</h3>
+            <p>A Simple designing of the Animated bar.</p>
+            <a href="https://faisal10012001.github.io/Bar/" class="btn-project" target="_blank">View Project</a>
+         </div>
+         <div class="project-card" id="project5">
+    <i class="fa-solid fa-building-columns"></i>
+    <h3>EMI Calculator</h3>
+    <p>A Simple designing of Emi-Calculator.</p>
+    <a href="https://emi-calculator-k2bff8k90-faisal10012001s-projects.vercel.app/" class="btn-project" target="_blank">View Project</a>
 </div>
 
-<div class="projects-section" id="projects">
-   <h2 style="text-align:center;">Projects</h2>
-
-   <div class="projects-container">
-
-      <div class="project-card">
-         <i class="fa-solid fa-book"></i>
-         <h3>Dictionary</h3>
-      </div>
-
-      <div class="project-card">
-         <i class="fa-solid fa-heart"></i>
-         <h3>Matrimonial</h3>
-      </div>
-
-      <div class="project-card">
-         <i class="fa-solid fa-cart-shopping"></i>
-         <h3>Cart</h3>
-      </div>
-
-      <div class="project-card">
-         <i class="fa-solid fa-beer-mug-empty"></i>
-         <h3>Bar</h3>
-      </div>
-
-      <div class="project-card">
-         <i class="bi bi-bank"></i>
-         <h3>EMI Calculator</h3>
-      </div>
-
-      <div class="project-card">
-         <i class="bi bi-cloud-sun"></i>
-         <h3>Weather App</h3>
-      </div>
-
-   </div>
+<div class="project-card" id="project6">
+    <i class="fa-solid fa-cloud-sun"></i>
+    <h3>Weather App</h3>
+    <p>A Simple designing of Weather-App.</p>
+    <a href="https://vercel.com/faisal10012001s-projects/weather-app/GU37tjMGYL4k41g3k7BaieSR29Cj" class="btn-project" target="_blank">View Project</a>
 </div>
+      </div>
+   </div>
 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
+
 </html>
